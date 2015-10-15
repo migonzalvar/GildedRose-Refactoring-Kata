@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-from __future__ import print_function
-
 from gilded_rose import *
 
 if __name__ == "__main__":
-    print ("OMGHAI!")
+
     items = [
              Item(name="+5 Dexterity Vest", sell_in=10, quality=20),
              Item(name="Aged Brie", sell_in=2, quality=0),
@@ -17,14 +15,7 @@ if __name__ == "__main__":
              Item(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
             ]
 
-    days = 2
-    import sys
-    if len(sys.argv) > 1:
-        days = int(sys.argv[1]) + 1
-    for day in range(days):
-        print("-------- day %s --------" % day)
-        print("name, sellIn, quality")
-        for item in items:
-            print(item)
-        print("")
-        GildedRose(items).update_quality()
+    print(items)
+    gilded = GildedRose(items)
+    gilded.update_quality()
+    print(items)

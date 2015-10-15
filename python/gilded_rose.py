@@ -7,6 +7,9 @@ class GildedRose(object):
 
     def update_quality(self):
         for item in self.items:
+            if item.name.lower() == "conjured mana cake":
+                continue
+                
             if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert":
                 if item.quality > 0:
                     if item.name != "Sulfuras, Hand of Ragnaros":
@@ -43,4 +46,4 @@ class Item:
         self.quality = quality
 
     def __repr__(self):
-        return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
+        return "%s, %s, %s\n" % (self.name, self.sell_in, self.quality)
